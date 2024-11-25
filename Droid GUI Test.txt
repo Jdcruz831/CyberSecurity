@@ -1,0 +1,22 @@
+GUI a
+DELAY 2000
+REM gemini or google voice
+GUI b
+DELAY 2000
+REM Chrome
+GUI c
+DELAY 2000
+REM Contacts
+GUI d
+DELAY 2000
+# home
+GUI e
+DELAY 2000
+#email
+GUI f
+DELAY 2000
+#search
+GUI g
+DELAY 2000
+GUI h
+DELAY 2000

